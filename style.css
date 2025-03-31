@@ -13,18 +13,20 @@
 
 }
 h1 {
-    font-size:clamp(1.875rem, 1.8179rem + 0.2284vw, 2.0006rem);
+    font-size:1.6em;
 }
 
 
 
 
 body {
-    background: var(--Grey-400);
+    background: var(--White);
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    color: var(--Grey-400);
     
     font-family: Poppins;
     
@@ -33,34 +35,76 @@ body {
 /* h2 {
     font-size
 } */
-
+main {
+    text-align: center;
+    
+}
+ span {
+    font-weight: 200;
+    color: var(--Grey-500);
+}
 #container {
     display:flex;
     flex-direction:column;
-    /* padding: 1.7em 1.4em; */
+    padding: 1em;
+    font-weight: 200;
     
 }
 section {
     background-color: var(--White);
     margin:3%;
     padding: 2em;
-    min-height: 250px;
+    max-height: 250px;
     border-radius: 1em;
-    box-shadow: 0px 0.8em 8px rgb(68, 83, 87);;
+    box-shadow: 0px 0.8em 8px rgb(178, 211, 220);;
 }
 
 #Supervisor {
-    border-top: 0.4em solid var(--Cyan)
+    border-top: 0.4em solid var(--Cyan);
+    grid-area: sup;
 }
 
 #team-builder {
-    border-top: 0.4em solid var(--Red)
+    border-top: 0.4em solid var(--Red);
+    grid-area: team;
 }
 
 #karma{
-    border-top: 0.4em solid var(--Orange)
+    border-top: 0.4em solid var(--Orange);
+    grid-area: karma;
 }
 
 #calculator {
-    border-top: 0.4em solid var(--Blue)
+    border-top: 0.4em solid var(--Blue);
+    grid-area: calc;
+
+}
+img {
+    padding-left: 80%;
+    padding-top: 10%;
+}
+p {
+    color: var(--Grey-400);
+}
+
+@media  screen and (min-width:900px) {
+    #container {
+        display:grid;
+        grid-template-rows: 1fr repeat(3, 0.5fr) 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+         ". team ."
+         "sup team calc"
+         "sup . calc"
+         "sup karma calc"
+         ". karma ."
+            ;
+        
+
+    }
+    main {
+        font-size: 1.2em;
+        padding: 3em 10em;
+    }
+    
 }
